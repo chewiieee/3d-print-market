@@ -4,7 +4,6 @@ import plotly.graph_objects as go
 import pandas as pd
 import sys, os
 sys.path.insert(0, ".")
-from db import get_taobao_products, get_xhs_notes, get_stats, init_db
 
 # ───────────────────────────────────────────────
 # 页面配置
@@ -18,7 +17,12 @@ st.set_page_config(
 # ───────────────────────────────────────────────
 # 初始化数据库（首次打开时建表）
 # ───────────────────────────────────────────────
-init_db()
+try:
+    from db import init_db
+    init_db()
+except Exception:
+    # 云端可能是只读文件系统，初始化失败时直接走 CSV 回退
+    pass
 
 # ───────────────────────────────────────────────
 # 数据加载（带缓存，60秒内不重复查询）
