@@ -1,0 +1,19 @@
+# 虚拟环境
+venv/
+__pycache__/
+*.pyc
+
+# 数据库（含真实爬取数据，不上传）
+data/market.db
+
+# 登录凭证（绝对不能上传！）
+data/taobao_cookies.json
+data/xhs_cookies.json
+
+# 调试文件
+data/debug_*.html
+data/debug_card.html
+debug_*.py
+
+# 系统文件
+.DS_Store

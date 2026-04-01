@@ -1,0 +1,7 @@
+playwright
+streamlit
+plotly
+pandas
+apscheduler
+fake-useragent
+openpyxl
